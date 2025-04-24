@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,16 +53,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+                car: {
+                    DEFAULT: '#0066ff', // Electric blue
+                    dark: '#0052cc',
+                    light: '#4d94ff',
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +80,31 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'float': {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-10px)' }
+                },
+                'rotate-car': {
+                    '0%': { transform: 'rotateY(0deg)' },
+                    '100%': { transform: 'rotateY(360deg)' }
+                },
+                'slide-in': {
+                    '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                    '100%': { transform: 'translateX(0)', opacity: '1' }
+                },
+                'fade-in': {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'float': 'float 3s ease-in-out infinite',
+                'rotate-car': 'rotate-car 10s linear infinite',
+                'slide-in': 'slide-in 0.6s ease-out',
+                'fade-in': 'fade-in 0.8s ease-out'
 			}
 		}
 	},
